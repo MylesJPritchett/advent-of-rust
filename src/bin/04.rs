@@ -2,9 +2,6 @@ use advent_of_code::helpers::parse_regex::parse_lines;
 use regex::Regex;
 
 pub fn part_one(input: &str) -> Option<usize> {
-    // read line
-    // if (first[0] <= second[0] and first[1] >= second[1]) or (second[0] <= first[0] and second[1] >= first[1])
-    // add 1 to count
     let re = Regex::new(r"(\d+)\-(\d+),(\d+)\-(\d+)").unwrap();
 
     let input: Vec<(usize, usize, usize, usize)> = parse_lines(re, input.trim()).collect();
